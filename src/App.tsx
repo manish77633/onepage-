@@ -157,40 +157,39 @@ function App() {
               <p>Focused advisory where projects, capital and global wealth intersect.</p>
             </div>
           </div>
-          <div className="service-list">
-            {services.map((s, i) => {
-              const Icon = s.icon
-              return (
-                <motion.article
-                  key={s.number}
-                  className={`service-item ${active === i ? 'active' : ''}`}
-                  onMouseEnter={() => setActive(i)}
-                  initial={{opacity:0, y:25}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:.15}}
-                  transition={{duration:.65, delay:i*.08}}
-                >
-                  <div className="service-content-inner">
-                    <div className="service-top-row">
-                      <span className="service-number">{s.number}</span>
-                      <span className="service-kicker">{s.kicker}</span>
+          <div className="service-grid-wrap section">
+            <div className="service-grid">
+              {services.map((s, i) => {
+                const Icon = s.icon
+                return (
+                  <motion.article
+                    key={s.number}
+                    className="service-card"
+                    initial={{opacity:0, y:25}}
+                    whileInView={{opacity:1,y:0}}
+                    viewport={{once:true,amount:.15}}
+                    transition={{duration:.65, delay:i*.08}}
+                  >
+                    <div className="service-card-image-wrap">
+                      <img src={s.image} alt={s.title} className="service-card-image" />
+                      <span className="service-card-number">{s.number}</span>
                     </div>
-                    <div className="service-title">
-                      <h3>{s.title}</h3>
-                    </div>
-                    <div className="service-desc">
-                      <p>{s.text}</p>
-                    </div>
-                    <div className="service-footer-row">
-                      <span className="service-tag">{s.tag}</span>
-                      <div className="service-icon">
-                        <Icon size={20} className="service-type-icon"/>
-                        <ChevronRight size={18} className="service-arrow-icon"/>
+                    <div className="service-card-body">
+                      <span className="service-card-kicker">{s.kicker}</span>
+                      <h3 className="service-card-title">{s.title}</h3>
+                      <p className="service-card-desc">{s.text}</p>
+                      <div className="service-card-footer">
+                        <span className="service-card-tag">{s.tag}</span>
+                        <div className="service-card-icon">
+                          <Icon size={19} className="service-type-icon"/>
+                          <ChevronRight size={18} className="service-arrow-icon"/>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="service-bg" style={{backgroundImage:`url(${s.image})`}}/>
-                </motion.article>
-              )
-            })}
+                  </motion.article>
+                )
+              })}
+            </div>
           </div>
         </section>
 
