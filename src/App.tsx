@@ -168,10 +168,25 @@ function App() {
                   initial={{opacity:0, y:25}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:.15}}
                   transition={{duration:.65, delay:i*.08}}
                 >
-                  <div className="service-number">{s.number}</div>
-                  <div className="service-title"><span>{s.kicker}</span><h3>{s.title}</h3></div>
-                  <div className="service-desc"><p>{s.text}</p><small>{s.tag}</small></div>
-                  <div className="service-icon"><Icon size={24}/><ChevronRight size={18}/></div>
+                  <div className="service-content-inner">
+                    <div className="service-top-row">
+                      <span className="service-number">{s.number}</span>
+                      <span className="service-kicker">{s.kicker}</span>
+                    </div>
+                    <div className="service-title">
+                      <h3>{s.title}</h3>
+                    </div>
+                    <div className="service-desc">
+                      <p>{s.text}</p>
+                    </div>
+                    <div className="service-footer-row">
+                      <span className="service-tag">{s.tag}</span>
+                      <div className="service-icon">
+                        <Icon size={20} className="service-type-icon"/>
+                        <ChevronRight size={18} className="service-arrow-icon"/>
+                      </div>
+                    </div>
+                  </div>
                   <div className="service-bg" style={{backgroundImage:`url(${s.image})`}}/>
                 </motion.article>
               )
