@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowDownRight, ArrowUpRight, Check, ChevronRight, Menu, X, ShieldCheck, Building2, Globe2, Phone, Mail, MapPin, MessageCircle } from 'lucide-react'
+import vkaLogo from './assets/vka-logo.jpg'
 
 const services = [
   {
@@ -70,8 +71,7 @@ function App() {
       <header className="nav-wrap">
         <nav className="nav">
           <a href="#top" className="brand" onClick={close}>
-            <span className="brand-mark">V</span>
-            <span><strong>VKA</strong><small>CAPITAL BRIDGE</small></span>
+            <img src={vkaLogo} alt="VKA Capital Bridge" className="brand-logo" />
           </a>
           <div className={`nav-links ${menu ? 'open' : ''}`}>
             <a href="#about" onClick={close}>About</a>
@@ -312,7 +312,7 @@ function App() {
 
       <footer>
         <div className="footer-main">
-          <a href="#top" className="brand footer-brand"><span className="brand-mark">V</span><span><strong>VKA</strong><small>CAPITAL BRIDGE</small></span></a>
+          <a href="#top" className="brand footer-brand"><img src={vkaLogo} alt="VKA Capital Bridge" className="brand-logo footer-logo" /></a>
           <div className="footer-links"><a href="#about">About</a><a href="#services">Services</a><a href="#why-vka">Why VKA</a><a href="#contact">Contact</a></div>
           <div className="footer-tag">Projects · Finance · Global Wealth</div>
         </div>

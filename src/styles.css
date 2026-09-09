@@ -59,7 +59,7 @@ h2 {
 h2 em,
 h1 em {
   font-style: normal;
-  color: #a48750;
+  color: #1a6fb5;
 }
 .section {
   max-width: 1400px;
@@ -94,12 +94,19 @@ h1 em {
   gap: 10px;
   margin-right: auto;
 }
+.brand-logo {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 6px;
+}
 .brand-mark {
   display: grid;
   place-items: center;
   width: 34px;
   height: 34px;
-  background: #121416;
+  background: #0b2d4f;
   color: #f5f4f0;
   font-family: Manrope;
   font-weight: 800;
@@ -130,19 +137,23 @@ h1 em {
   transition: 0.2s;
 }
 .nav-links a:hover {
-  color: #a48750;
+  color: #1a6fb5;
 }
 .nav-cta {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #121416;
+  background: #0b2d4f;
   color: #fff;
   border-radius: 100px;
   padding: 13px 18px;
   font-size: 12px;
   font-weight: 600;
   margin-left: 28px;
+  transition: background 0.25s;
+}
+.nav-cta:hover {
+  background: #134b7a;
 }
 .menu-btn {
   display: none;
@@ -187,7 +198,7 @@ h1 em {
 .eyebrow span {
   width: 28px;
   height: 1px;
-  background: #a48750;
+  background: #2a8fd4;
 }
 .hero h1 {
   font-size: clamp(48px, 5vw, 78px);
@@ -222,8 +233,11 @@ h1 em {
   transform: translateY(-3px);
 }
 .primary {
-  background: #121416;
+  background: #0b2d4f;
   color: #fff;
+}
+.primary:hover {
+  background: #134b7a;
 }
 .text-link {
   display: inline-flex;
@@ -296,12 +310,12 @@ h1 em {
   transform: rotate(-42deg);
   font-size: 7px;
   letter-spacing: 0.2em;
-  color: #a48750;
+  color: #2a8fd4;
 }
 .bridge-line i {
   width: 42px;
   height: 1px;
-  background: #a48750;
+  background: #2a8fd4;
 }
 .hero-meta {
   position: absolute;
@@ -339,7 +353,7 @@ h1 em {
   background: #aaa;
 }
 .stat-strip {
-  background: #121416;
+  background: #091c2e;
   color: #fff;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -347,7 +361,7 @@ h1 em {
   gap: 20px;
 }
 .stat-strip div {
-  border-left: 1px solid #3a3c3d;
+  border-left: 1px solid #1a3a55;
   padding-left: 24px;
 }
 .stat-strip strong {
@@ -356,7 +370,7 @@ h1 em {
   letter-spacing: -0.04em;
 }
 .stat-strip strong span {
-  color: #a48750;
+  color: #2a8fd4;
 }
 .stat-strip small {
   display: block;
@@ -402,7 +416,7 @@ h1 em {
 }
 .services-section,
 .process {
-  background: #121416;
+  background: #0a1a2a;
   color: #fff;
   padding: 130px 0 0;
 }
@@ -436,8 +450,8 @@ h1 em {
   gap: 32px;
 }
 .service-card {
-  background: #17191b;
-  border: 1px solid #282a2c;
+  background: #0e1e2f;
+  border: 1px solid #1a3050;
   border-radius: 16px;
   overflow: hidden;
   display: flex;
@@ -447,15 +461,15 @@ h1 em {
 }
 .service-card:hover {
   transform: translateY(-6px);
-  border-color: #a48750;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: #2a8fd4;
+  box-shadow: 0 20px 40px rgba(10, 50, 90, 0.35);
 }
 .service-card-image-wrap {
   position: relative;
   width: 100%;
   height: 230px;
   overflow: hidden;
-  background: #0f1011;
+  background: #091520;
 }
 .service-card-image {
   width: 100%;
@@ -473,14 +487,14 @@ h1 em {
   position: absolute;
   top: 16px;
   left: 16px;
-  background: rgba(18, 20, 22, 0.85);
+  background: rgba(10, 26, 42, 0.85);
   backdrop-filter: blur(8px);
-  color: #a48750;
+  color: #3da5e8;
   font: 700 12px/1 Manrope;
   letter-spacing: 0.12em;
   padding: 6px 14px;
   border-radius: 100px;
-  border: 1px solid rgba(164, 135, 80, 0.3);
+  border: 1px solid rgba(42, 143, 212, 0.3);
 }
 .service-card-body {
   padding: 28px 24px 24px;
@@ -491,7 +505,7 @@ h1 em {
 .service-card-kicker {
   font-size: 10px;
   font-weight: 700;
-  color: #a48750;
+  color: #3da5e8;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -529,7 +543,7 @@ h1 em {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #a48750;
+  color: #2a8fd4;
 }
 .service-card-icon .service-arrow-icon {
   transition: transform 0.3s ease;
@@ -610,7 +624,7 @@ h1 em {
   font-weight: 600;
 }
 .feature-list svg {
-  color: #a48750;
+  color: #2a8fd4;
 }
 .dubai-feature {
   height: 850px;
@@ -630,9 +644,9 @@ h1 em {
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(8, 9, 9, 0.9),
-    rgba(8, 9, 9, 0.3) 75%,
-    rgba(8, 9, 9, 0.15)
+    rgba(6, 18, 32, 0.92),
+    rgba(6, 18, 32, 0.35) 75%,
+    rgba(6, 18, 32, 0.15)
   );
 }
 .dubai-content {
@@ -666,7 +680,7 @@ h1 em {
   font: 600 38px Manrope;
 }
 .dubai-metrics strong span {
-  color: #a48750;
+  color: #3da5e8;
 }
 .dubai-metrics small {
   display: block;
@@ -705,7 +719,7 @@ h1 em {
 }
 .why-points span {
   font-size: 9px;
-  color: #a48750;
+  color: #2a8fd4;
 }
 .why-points h3 {
   font-size: 20px;
@@ -745,14 +759,14 @@ h1 em {
   display: grid;
   place-content: center;
   text-align: center;
-  background: #121416;
+  background: #0b2d4f;
   color: #fff;
   font: 700 19px/1 Manrope;
 }
 .bridge-diagram strong small {
   font-size: 6px;
   letter-spacing: 0.2em;
-  color: #a48750;
+  color: #3da5e8;
   margin-top: 7px;
 }
 .process {
@@ -767,12 +781,12 @@ h1 em {
   margin-top: 85px;
 }
 .process-grid > div {
-  border-top: 1px solid #343738;
+  border-top: 1px solid #1a3a55;
   padding: 25px 25px 0 0;
 }
 .process-grid span {
   font-size: 9px;
-  color: #a48750;
+  color: #3da5e8;
 }
 .process-grid h3 {
   font-size: 23px;
@@ -817,7 +831,7 @@ h1 em {
   font-weight: 600;
 }
 .contact-details svg {
-  color: #a48750;
+  color: #1a6fb5;
 }
 .contact-form {
   display: flex;
@@ -850,7 +864,7 @@ h1 em {
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus {
-  border-color: #a48750;
+  border-color: #2a8fd4;
 }
 .submit {
   border: 0;
@@ -859,7 +873,7 @@ h1 em {
   margin-top: 8px;
 }
 footer {
-  background: #0e1011;
+  background: #06121e;
   color: #fff;
   padding: 65px max(32px, calc((100vw - 1240px) / 2)) 30px;
 }
@@ -875,6 +889,10 @@ footer {
   background: #fff;
   color: #111;
 }
+.footer-logo {
+  height: 50px;
+  border-radius: 8px;
+}
 .footer-links {
   display: flex;
   gap: 25px;
@@ -886,12 +904,12 @@ footer {
 }
 .footer-tag {
   text-align: right;
-  color: #a48750;
+  color: #3da5e8;
   font-size: 9px;
   letter-spacing: 0.1em;
 }
 .footer-bottom {
-  border-top: 1px solid #292b2c;
+  border-top: 1px solid #152535;
   margin-top: 55px;
   padding-top: 20px;
   display: flex;
@@ -901,7 +919,7 @@ footer {
   letter-spacing: 0.08em;
 }
 .footer-bottom span:last-child {
-  color: #a48750;
+  color: #3da5e8;
 }
 .disclaimer {
   color: #555;
@@ -936,6 +954,12 @@ footer {
 @media (max-width: 900px) {
   .nav {
     width: calc(100% - 28px);
+  }
+  .brand-logo {
+    height: 38px;
+  }
+  .footer-logo {
+    height: 42px;
   }
   .desktop-only {
     display: none;
@@ -1172,7 +1196,7 @@ footer {
     width: 1px;
     height: 35px;
     margin: 0;
-    background: #a48750;
+    background: #2a8fd4;
   }
   .bridge-diagram strong {
     width: 110px;
@@ -1185,6 +1209,12 @@ footer {
   h2 {
     font-size: clamp(30px, 8vw, 42px);
     line-height: 1.06;
+  }
+  .brand-logo {
+    height: 34px;
+  }
+  .footer-logo {
+    height: 38px;
   }
   .hero {
     padding: 115px 18px 50px;
