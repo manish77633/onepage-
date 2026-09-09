@@ -880,6 +880,23 @@ footer {
 .desktop-only {
   display: flex;
 }
+@media (max-width: 1024px) {
+  .hero-container {
+    gap: 30px;
+  }
+  .service-item {
+    grid-template-columns: 40px 240px 1fr 50px;
+    gap: 30px;
+    padding: 35px 3%;
+  }
+  .split-copy {
+    padding: 80px 6%;
+  }
+  .why-grid, .about-grid {
+    gap: 5%;
+  }
+}
+
 @media (max-width: 900px) {
   .nav {
     width: calc(100% - 28px);
@@ -924,47 +941,51 @@ footer {
   }
   .hero {
     height: auto;
-    min-height: 900px;
-    padding: 150px 24px 100px;
+    min-height: auto;
+    padding: 140px 24px 80px;
     display: block;
   }
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 40px;
   }
   .hero-copy {
     width: 100%;
   }
   .hero h1 {
-    font-size: clamp(52px, 14vw, 80px);
+    font-size: clamp(40px, 9vw, 68px);
   }
   .hero-visual {
     position: relative;
     right: auto;
     top: auto;
     width: 100%;
-    height: 450px;
-    margin-top: 55px;
+    height: 380px;
+    margin-top: 35px;
   }
   .hero-dubai {
-    width: 83%;
+    width: 85%;
     height: 75%;
   }
   .hero-infra {
-    width: 55%;
-    height: 45%;
+    width: 58%;
+    height: 48%;
   }
   .hero-meta {
-    left: 24px;
-    bottom: 30px;
-    gap: 18px;
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
   }
   .scroll-cue {
     display: none;
   }
   .stat-strip {
     grid-template-columns: 1fr 1fr;
-    padding: 30px 24px;
+    padding: 35px 24px;
     gap: 25px;
   }
   .stat-strip div {
@@ -974,77 +995,106 @@ footer {
     width: calc(100% - 48px);
   }
   .about {
-    padding: 100px 0;
+    padding: 80px 0;
   }
   .about-grid,
   .why-grid,
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 55px;
+    gap: 45px;
   }
   .about-grid {
-    padding-top: 50px;
+    padding-top: 40px;
   }
   .service-head-row {
-    display: block;
-    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 40px 0;
   }
   .service-head-row p {
-    margin-top: 25px;
+    margin-top: 0;
+    max-width: 100%;
   }
   .service-item {
-    min-height: 300px;
-    grid-template-columns: 1fr;
-    padding: 35px 24px;
-    gap: 20px;
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 40px 1fr 32px;
+    grid-template-areas:
+      "num title icon"
+      "desc desc desc";
+    padding: 30px 24px;
+    gap: 16px 12px;
+    align-items: start;
   }
-  .service-number, .service-title, .service-desc, .service-icon {
-    grid-column: 1;
+  .service-number {
+    grid-area: num;
+    font-size: 12px;
+    padding-top: 2px;
+  }
+  .service-title {
+    grid-area: title;
+  }
+  .service-title h3 {
+    font-size: clamp(22px, 5vw, 32px);
+    margin: 6px 0 0;
   }
   .service-desc {
-    grid-row: auto;
-  }
-  .service-icon {
-    grid-row: auto;
-    justify-content: flex-start;
+    grid-area: desc;
+    margin-top: 4px;
   }
   .service-desc p {
-    max-width: none;
-    margin-top: 20px;
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.65;
+    margin-bottom: 8px;
+  }
+  .service-icon {
+    grid-area: icon;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 2px;
   }
   .split-feature,
   .split-feature.reverse {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
   .split-image {
-    min-height: 500px;
+    min-height: 350px;
+    padding: 35px 24px;
   }
   .split-copy {
-    padding: 85px 35px;
+    padding: 65px 24px;
   }
   .reverse .split-copy {
     order: 2;
   }
   .dubai-feature {
-    height: 780px;
+    height: auto;
+    min-height: auto;
+    padding: 90px 0;
   }
   .dubai-metrics {
-    gap: 22px;
+    gap: 25px;
     flex-wrap: wrap;
   }
   .dubai-metrics strong {
-    font-size: 28px;
+    font-size: 32px;
   }
   .why {
-    padding: 100px 0;
+    padding: 80px 0;
   }
   .process {
-    padding-top: 90px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
   .process-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 35px;
-    margin-top: 55px;
+    gap: 30px;
+    margin-top: 45px;
   }
   .footer-main {
     grid-template-columns: 1fr;
@@ -1057,73 +1107,117 @@ footer {
     text-align: left;
   }
   .footer-bottom {
-    display: block;
-    line-height: 2.2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    line-height: 1.8;
+  }
+  .bridge-diagram {
+    flex-direction: column;
+    gap: 18px;
+    padding: 40px 20px;
+    text-align: center;
   }
   .bridge-diagram > span {
-    width: 8%;
-    margin: 0 10px;
+    width: 1px;
+    height: 35px;
+    margin: 0;
+    background: #a48750;
+  }
+  .bridge-diagram strong {
+    width: 110px;
+    height: 110px;
+    font-size: 16px;
   }
 }
-@media (max-width: 520px) {
+
+@media (max-width: 580px) {
   h2 {
-    font-size: 48px;
+    font-size: clamp(32px, 8.5vw, 44px);
+    line-height: 1.05;
   }
   .hero {
-    min-height: 850px;
+    padding: 120px 18px 50px;
+  }
+  .hero h1 {
+    font-size: clamp(34px, 9.5vw, 48px);
   }
   .hero-actions {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
+    align-items: stretch;
+    gap: 14px;
+    width: 100%;
+  }
+  .hero-actions .button,
+  .hero-actions .text-link {
+    justify-content: center;
+    width: 100%;
+    text-align: center;
   }
   .hero-visual {
-    height: 350px;
+    height: 280px;
   }
   .hero-dubai {
     width: 88%;
     height: 72%;
   }
   .hero-infra {
-    width: 58%;
-    height: 43%;
-    border-width: 7px;
+    width: 60%;
+    height: 44%;
+    border-width: 6px;
+  }
+  .stat-strip {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 15px;
+    padding: 28px 18px;
   }
   .service-item {
-    grid-template-columns: 35px 1fr 35px;
+    padding: 24px 18px;
+    grid-template-columns: 32px 1fr 28px;
+    gap: 12px 10px;
   }
   .service-title h3 {
-    font-size: 28px;
+    font-size: 22px;
   }
-  .process-grid {
-    grid-template-columns: 1fr;
+  .split-image {
+    min-height: 260px;
+    padding: 25px 18px;
   }
-  .contact {
-    padding: 90px 0;
+  .split-image b {
+    bottom: 25px;
+    left: 18px;
+    font-size: 34px;
+  }
+  .split-copy {
+    padding: 45px 18px;
   }
   .dubai-content {
-    width: calc(100% - 48px);
+    width: calc(100% - 36px);
   }
   .dubai-content h2 {
-    font-size: 65px;
+    font-size: clamp(36px, 9vw, 54px);
   }
   .dubai-metrics {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 18px;
   }
-  .bridge-diagram div {
-    font-size: 8px;
+  .dubai-metrics strong {
+    font-size: 26px;
   }
-  .bridge-diagram strong {
-    width: 90px;
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .contact {
+    padding: 70px 0;
+  }
+  .contact-form textarea {
     height: 90px;
-    font-size: 15px;
   }
-  .bridge-diagram strong small {
-    font-size: 5px;
-  }
-  .bridge-diagram > span {
-    margin: 0 6px;
-    width: 5%;
+  .submit {
+    width: 100%;
+    justify-content: center;
   }
 }
+
