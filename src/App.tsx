@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ArrowDownRight, ArrowUpRight, Check, ChevronRight, Menu, X, ShieldCheck, Building2, Globe2, Phone, Mail, MapPin, MessageCircle } from 'lucide-react'
+import { ArrowDownRight, ArrowUpRight, Check, ChevronRight, Menu, X, ShieldCheck, Building2, Globe2, Phone, Mail, MapPin, MessageCircle, Linkedin } from 'lucide-react'
 import vkaLogo from './assets/vka-logo.jpg'
 
 const services = [
@@ -41,7 +41,6 @@ const fadeUp = {
 function App() {
   const [menu, setMenu] = useState(false)
   const [active, setActive] = useState(0)
-  const [formStatus, setFormStatus] = useState('idle') // idle, submitting, frontend-only
   const { scrollYProgress } = useScroll()
   const heroY = useTransform(scrollYProgress, [0, .25], [0, 90])
   const heroOpacity = useTransform(scrollYProgress, [0, .2], [1, .25])
@@ -56,14 +55,6 @@ function App() {
   }, [])
 
   const close = () => setMenu(false)
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormStatus('submitting');
-    setTimeout(() => {
-      setFormStatus('frontend-only');
-    }, 1000);
-  }
 
   return (
     <div className="site">
@@ -276,35 +267,40 @@ function App() {
 
         <section id="contact" className="contact">
           <div className="section">
-            <div className="contact-grid">
-              <div>
-                <span className="section-no">06 / CONTACT</span>
+            <div className="section-intro"><span className="section-no">06 / CONTACT</span><span className="line"/></div>
+            <div className="contact-layout">
+              <div className="contact-left">
                 <h2>Let's build the<br/><em>right bridge.</em></h2>
-                <p>Have a project, financing requirement or global investment goal? Start a conversation with VKA.</p>
-                <div className="contact-details">
-                  <a href="mailto:vinod@vkacapitalbridge.com"><Mail size={17}/> vinod@vkacapitalbridge.com</a>
-                  <a href="tel:+919618211000"><Phone size={17}/> +91 96182 11000</a>
-                  <a href="https://wa.me/919618211000?text=Hello%20VKA%20Capital%20Bridge,%20I%20would%20like%20to%20discuss%20an%20advisory%20requirement." target="_blank" rel="noopener noreferrer"><MessageCircle size={17}/> WhatsApp us</a>
-                  <span><MapPin size={17}/> NCR · Mumbai · Jaipur · Dubai</span>
-                </div>
+                <p>Have a project, financing requirement or global investment goal? Start a conversation with VKA Capital Bridge.</p>
+                <a className="button primary" href="mailto:vka.vinod@gmail.com">Start a conversation <ArrowUpRight size={17}/></a>
               </div>
-              <form className="contact-form" onSubmit={handleFormSubmit}>
-                <label>Name<input required placeholder="Your name"/></label>
-                <label>Email<input required type="email" placeholder="you@company.com"/></label>
-                <label>Phone<input required placeholder="+91"/></label>
-                <label>I'm interested in
-                  <select required defaultValue=""><option value="" disabled>Select an area</option><option>Infrastructure Advisory</option><option>Surety Bonds & BG Advisory</option><option>Dubai Real Estate</option><option>General Advisory</option></select>
-                </label>
-                <label>Message<textarea required rows={3} placeholder="Tell us briefly about your requirement"/></label>
-                {formStatus === 'frontend-only' && (
-                  <p style={{ color: '#d9534f', fontSize: '13px', margin: 0 }}>
-                    Currently the inquiry form is frontend-only and does not permanently store/send submissions. Please use the email or phone above.
-                  </p>
-                )}
-                <button className="button primary submit" disabled={formStatus === 'submitting'}>
-                  {formStatus === 'submitting' ? 'Sending...' : 'Send enquiry'} <ArrowUpRight size={17}/>
-                </button>
-              </form>
+              <div className="contact-cards">
+                <a href="mailto:vka.vinod@gmail.com" className="contact-card">
+                  <div className="contact-card-icon"><Mail size={20}/></div>
+                  <span className="contact-card-label">EMAIL</span>
+                  <span className="contact-card-value">vka.vinod@gmail.com</span>
+                </a>
+                <a href="tel:+919618211000" className="contact-card">
+                  <div className="contact-card-icon"><Phone size={20}/></div>
+                  <span className="contact-card-label">PHONE</span>
+                  <span className="contact-card-value">+91 96182 11000</span>
+                </a>
+                <a href="https://wa.me/919618211000?text=Hello%20VKA%20Capital%20Bridge,%20I%20would%20like%20to%20discuss%20an%20advisory%20requirement." target="_blank" rel="noopener noreferrer" className="contact-card">
+                  <div className="contact-card-icon"><MessageCircle size={20}/></div>
+                  <span className="contact-card-label">WHATSAPP</span>
+                  <span className="contact-card-value">Chat with us</span>
+                </a>
+                <a href="https://maps.google.com/?q=Jaipur,+Rajasthan" target="_blank" rel="noopener noreferrer" className="contact-card">
+                  <div className="contact-card-icon"><MapPin size={20}/></div>
+                  <span className="contact-card-label">LOCATION</span>
+                  <span className="contact-card-value">Jaipur, Rajasthan</span>
+                </a>
+                <a href="https://www.linkedin.com/in/vinod-kumar-agrawal-79321342/" target="_blank" rel="noopener noreferrer" className="contact-card contact-card-wide">
+                  <div className="contact-card-icon"><Linkedin size={20}/></div>
+                  <span className="contact-card-label">LINKEDIN</span>
+                  <span className="contact-card-value">Vinod Kumar Agrawal</span>
+                </a>
+              </div>
             </div>
           </div>
         </section>
