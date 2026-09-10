@@ -322,7 +322,7 @@ function App() {
       </footer>
 
       <a
-        href="https://wa.me/919618211000"
+        href="https://wa.me/919618211000?text=Hello%20VKA%20Capital%20Bridge,%20I%20would%20like%20to%20discuss%20an%20advisory%20requirement."
         className="floating-whatsapp"
         target="_blank"
         rel="noopener noreferrer"
