@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowDownRight, ArrowUpRight, Check, ChevronRight, Menu, X, ShieldCheck, Building2, Globe2, Phone, Mail, MapPin, MessageCircle, Linkedin } from 'lucide-react'
-import vkaLogo from './assets/vka-logo.jpg'
+import vkaLogo from './assets/vka-logo.png'
+import whatsappIcon from './assets/whatsapp_icon.png'
 
 const services = [
   {
@@ -69,11 +70,11 @@ function App() {
             <a href="#services" onClick={close}>Services</a>
             <a href="#why-vka" onClick={close}>Why VKA</a>
             <a href="#contact" onClick={close}>Contact</a>
-            <a className="nav-cta mobile-only" href="#contact" onClick={close}>Start a conversation <ArrowUpRight size={15}/></a>
+            <a className="nav-cta mobile-only" href="#contact" onClick={close}>Start a conversation <ArrowUpRight size={15} /></a>
           </div>
-          <a className="nav-cta desktop-only" href="#contact">Start a conversation <ArrowUpRight size={15}/></a>
+          <a className="nav-cta desktop-only" href="#contact">Start a conversation <ArrowUpRight size={15} /></a>
           <button className="menu-btn" aria-label="Toggle menu" onClick={() => setMenu(!menu)}>
-            {menu ? <X/> : <Menu/>}
+            {menu ? <X /> : <Menu />}
           </button>
         </nav>
       </header>
@@ -86,16 +87,16 @@ function App() {
                 <span /> VKA CAPITAL BRIDGE
               </motion.div>
               <motion.h1 initial="hidden" animate="visible" variants={fadeUp}>
-                Building the bridge<br/>
-                between <em>opportunity</em><br/>
+                Building the bridge<br />
+                between <em>opportunity</em><br />
                 and capital.
               </motion.h1>
               <motion.p initial="hidden" animate="visible" variants={fadeUp}>
                 Advisor & Management Consultant across infrastructure, finance and global real estate.
               </motion.p>
               <motion.div initial="hidden" animate="visible" variants={fadeUp} className="hero-actions">
-                <a className="button primary" href="#contact">Start a conversation <ArrowUpRight size={17}/></a>
-                <a className="text-link" href="#services">Explore services <ArrowDownRight size={17}/></a>
+                <a className="button primary" href="#contact">Start a conversation <ArrowUpRight size={17} /></a>
+                <a className="text-link" href="#services">Explore services <ArrowDownRight size={17} /></a>
               </motion.div>
             </motion.div>
 
@@ -104,7 +105,7 @@ function App() {
               <div className="hero-image hero-infra" />
               <div className="visual-label label-dubai">DUBAI <span>GLOBAL REAL ESTATE</span></div>
               <div className="visual-label label-india">INDIA <span>INFRASTRUCTURE</span></div>
-              <div className="bridge-line"><i/><span>CAPITAL BRIDGE</span><i/></div>
+              <div className="bridge-line"><i /><span>CAPITAL BRIDGE</span><i /></div>
             </motion.div>
           </div>
 
@@ -113,7 +114,7 @@ function App() {
             <div><span>02</span><b>Finance</b></div>
             <div><span>03</span><b>Dubai</b></div>
           </div>
-          <div className="scroll-cue"><span>SCROLL TO EXPLORE</span><i/></div>
+          <div className="scroll-cue"><span>SCROLL TO EXPLORE</span><i /></div>
         </section>
 
         <section className="stat-strip">
@@ -126,25 +127,25 @@ function App() {
         <section id="about" className="section about">
           <div className="section-intro">
             <span className="section-no">01 / ABOUT</span>
-            <span className="line"/>
+            <span className="line" />
           </div>
           <div className="about-grid">
-            <motion.h2 initial="hidden" whileInView="visible" viewport={{once:true, amount:.25}} variants={fadeUp}>
-              Experience that<br/><em>connects</em> markets.
+            <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true, amount: .25 }} variants={fadeUp}>
+              Experience that<br /><em>connects</em> markets.
             </motion.h2>
-            <motion.div initial="hidden" whileInView="visible" viewport={{once:true, amount:.25}} variants={fadeUp} className="about-copy">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: .25 }} variants={fadeUp} className="about-copy">
               <p className="lead">VKA Capital Bridge is an advisory platform connecting Indian infrastructure, structured finance and global real estate.</p>
               <p>Led by <strong>Vinod Agrawal</strong>, we help contractors, developers and investors unlock growth without unnecessary collateral barriers — connecting the right opportunity to the right capital partner.</p>
-              <a href="#contact" className="text-link dark">Discover VKA <ArrowUpRight size={16}/></a>
+              <a href="#contact" className="text-link dark">Discover VKA <ArrowUpRight size={16} /></a>
             </motion.div>
           </div>
         </section>
 
         <section id="services" className="services-section">
           <div className="section service-heading">
-            <div className="section-intro light"><span className="section-no">02 / SERVICES</span><span className="line"/></div>
+            <div className="section-intro light"><span className="section-no">02 / SERVICES</span><span className="line" /></div>
             <div className="service-head-row">
-              <h2>Three verticals.<br/><em>One strategic bridge.</em></h2>
+              <h2>Three verticals.<br /><em>One strategic bridge.</em></h2>
               <p>Focused advisory where projects, capital and global wealth intersect.</p>
             </div>
           </div>
@@ -156,10 +157,11 @@ function App() {
                   <motion.article
                     key={s.number}
                     className="service-card"
-                    initial={{opacity:0, y:25}}
-                    whileInView={{opacity:1,y:0}}
-                    viewport={{once:true,amount:.15}}
-                    transition={{duration:.65, delay:i*.08}}
+                    initial={{ opacity: 0, y: 25 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: .15 }}
+                    transition={{ duration: .65, delay: i * .08 }}
+                    onClick={() => window.location.href = '#contact'}
                   >
                     <div className="service-card-image-wrap">
                       <img src={s.image} alt={s.title} className="service-card-image" />
@@ -172,8 +174,8 @@ function App() {
                       <div className="service-card-footer">
                         <span className="service-card-tag">{s.tag}</span>
                         <div className="service-card-icon">
-                          <Icon size={19} className="service-type-icon"/>
-                          <ChevronRight size={18} className="service-arrow-icon"/>
+                          <Icon size={19} className="service-type-icon" />
+                          <ChevronRight size={18} className="service-arrow-icon" />
                         </div>
                       </div>
                     </div>
@@ -187,42 +189,42 @@ function App() {
         <section className="split-feature">
           <div className="split-image infra-image">
             <span>01 — INDIA</span>
-            <b>Infrastructure<br/>at scale.</b>
+            <b>Infrastructure<br />at scale.</b>
           </div>
           <div className="split-copy">
             <span className="section-no">INFRASTRUCTURE ADVISORY</span>
-            <h2>From tender<br/>to <em>closure.</em></h2>
+            <h2>From tender<br />to <em>closure.</em></h2>
             <p>Strategic support across government project bidding, JV structuring and financial closure for established contractors.</p>
             <div className="feature-list">
-              <span><Check size={16}/> NHAI / MSRDC / Govt. Project Bidding</span>
-              <span><Check size={16}/> JV Structuring & Financial Closure</span>
-              <span><Check size={16}/> For Contractors: Turnover ₹50Cr+</span>
+              <span><Check size={16} /> NHAI / MSRDC / Govt. Project Bidding</span>
+              <span><Check size={16} /> JV Structuring & Financial Closure</span>
+              <span><Check size={16} /> For Contractors: Turnover ₹50Cr+</span>
             </div>
-            <a className="text-link dark" href="#contact">Discuss your project <ArrowUpRight size={16}/></a>
+            <a className="text-link dark" href="#contact">Discuss your project <ArrowUpRight size={16} /></a>
           </div>
         </section>
 
         <section className="split-feature reverse finance-feature">
           <div className="split-copy">
             <span className="section-no">SURETY & BG ADVISORY</span>
-            <h2>Protect limits.<br/><em>Unlock cash flow.</em></h2>
+            <h2>Protect limits.<br /><em>Unlock cash flow.</em></h2>
             <p>Insurance-backed surety solutions and bank guarantee replacement advisory to help businesses deploy capital more efficiently.</p>
             <div className="feature-list">
-              <span><Check size={16}/> Collateral-free surety bonds</span>
-              <span><Check size={16}/> Bank guarantee replacement</span>
-              <span><Check size={16}/> IRDAI-approved insurer partners</span>
+              <span><Check size={16} /> Collateral-free surety bonds</span>
+              <span><Check size={16} /> Bank guarantee replacement</span>
+              <span><Check size={16} /> IRDAI-approved insurer partners</span>
             </div>
-            <a className="text-link dark" href="#contact">Explore an advisory route <ArrowUpRight size={16}/></a>
+            <a className="text-link dark" href="#contact">Explore an advisory route <ArrowUpRight size={16} /></a>
           </div>
-          <div className="split-image finance-image"><span>02 — FINANCE</span><b>Capital<br/>without friction.</b></div>
+          <div className="split-image finance-image"><span>02 — FINANCE</span><b>Capital<br />without friction.</b></div>
         </section>
 
         <section className="dubai-feature">
-          <div className="dubai-bg"/>
-          <div className="dubai-overlay"/>
+          <div className="dubai-bg" />
+          <div className="dubai-overlay" />
           <div className="dubai-content">
             <span className="section-no">03 / DUBAI REAL ESTATE</span>
-            <h2>From India<br/>to <em>Dubai.</em></h2>
+            <h2>From India<br />to <em>Dubai.</em></h2>
             <p>Investment advisory for Indian HNIs across off-plan and ready properties through direct developer relationships.</p>
             <div className="dubai-metrics">
               <div><strong>7–9<span>%</span></strong><small>RENTAL YIELD*</small></div>
@@ -230,15 +232,15 @@ function App() {
               <div><strong>01:01</strong><small>DIRECT DEVELOPER ACCESS</small></div>
             </div>
             <p className="dubai-disclaimer" style={{ fontSize: '11px', color: '#8f918f', marginTop: '-20px', marginBottom: '35px' }}>*Indicative/subject to property, market conditions and applicable terms.</p>
-            <a className="button light-button" href="#contact">Explore Dubai opportunities <ArrowUpRight size={17}/></a>
+            <a className="button light-button" href="#contact">Explore Dubai opportunities <ArrowUpRight size={17} /></a>
           </div>
         </section>
 
         <section id="why-vka" className="section why">
-          <div className="section-intro"><span className="section-no">04 / WHY VKA</span><span className="line"/></div>
+          <div className="section-intro"><span className="section-no">04 / WHY VKA</span><span className="line" /></div>
           <div className="why-grid">
             <div>
-              <h2>One advisor.<br/><em>Three strategic needs.</em></h2>
+              <h2>One advisor.<br /><em>Three strategic needs.</em></h2>
               <p className="why-lead">Projects. Finance. Global wealth.</p>
             </div>
             <div className="why-points">
@@ -248,14 +250,14 @@ function App() {
             </div>
           </div>
           <div className="bridge-diagram">
-            <div>PROJECTS</div><span/><strong>VKA<br/><small>CAPITAL BRIDGE</small></strong><span/><div>GLOBAL WEALTH</div>
+            <div>PROJECTS</div><span /><strong>VKA<br /><small>CAPITAL BRIDGE</small></strong><span /><div>GLOBAL WEALTH</div>
           </div>
         </section>
 
         <section className="process">
           <div className="section">
-            <div className="section-intro light"><span className="section-no">05 / APPROACH</span><span className="line"/></div>
-            <h2>Clarity before<br/><em>connection.</em></h2>
+            <div className="section-intro light"><span className="section-no">05 / APPROACH</span><span className="line" /></div>
+            <h2>Clarity before<br /><em>connection.</em></h2>
             <div className="process-grid">
               <div><span>01</span><h3>Understand</h3><p>Define the project, capital requirement or investment objective.</p></div>
               <div><span>02</span><h3>Structure</h3><p>Shape an advisory route around the opportunity and its constraints.</p></div>
@@ -267,36 +269,36 @@ function App() {
 
         <section id="contact" className="contact">
           <div className="section">
-            <div className="section-intro"><span className="section-no">06 / CONTACT</span><span className="line"/></div>
+            <div className="section-intro"><span className="section-no">06 / CONTACT</span><span className="line" /></div>
             <div className="contact-layout">
               <div className="contact-left">
-                <h2>Let's build the<br/><em>right bridge.</em></h2>
+                <h2>Let's build the<br /><em>right bridge.</em></h2>
                 <p>Have a project, financing requirement or global investment goal? Start a conversation with VKA Capital Bridge.</p>
-                <a className="button primary" href="mailto:vka.vinod@gmail.com">Start a conversation <ArrowUpRight size={17}/></a>
+                <a className="button primary" href="mailto:vinod@vkacapitalbridge.com">Start a conversation <ArrowUpRight size={17} /></a>
               </div>
               <div className="contact-cards">
-                <a href="mailto:vka.vinod@gmail.com" className="contact-card">
-                  <div className="contact-card-icon"><Mail size={20}/></div>
+                <a href="mailto:vinod@vkacapitalbridge.com" className="contact-card">
+                  <div className="contact-card-icon"><Mail size={20} /></div>
                   <span className="contact-card-label">EMAIL</span>
-                  <span className="contact-card-value">vka.vinod@gmail.com</span>
+                  <span className="contact-card-value">vinod@vkacapitalbridge.com</span>
                 </a>
                 <a href="tel:+919618211000" className="contact-card">
-                  <div className="contact-card-icon"><Phone size={20}/></div>
+                  <div className="contact-card-icon"><Phone size={20} /></div>
                   <span className="contact-card-label">PHONE</span>
                   <span className="contact-card-value">+91 96182 11000</span>
                 </a>
                 <a href="https://wa.me/919618211000?text=Hello%20VKA%20Capital%20Bridge,%20I%20would%20like%20to%20discuss%20an%20advisory%20requirement." target="_blank" rel="noopener noreferrer" className="contact-card">
-                  <div className="contact-card-icon"><MessageCircle size={20}/></div>
+                  <div className="contact-card-icon"><MessageCircle size={20} /></div>
                   <span className="contact-card-label">WHATSAPP</span>
                   <span className="contact-card-value">Chat with us</span>
                 </a>
                 <a href="https://maps.google.com/?q=Jaipur,+Rajasthan" target="_blank" rel="noopener noreferrer" className="contact-card">
-                  <div className="contact-card-icon"><MapPin size={20}/></div>
+                  <div className="contact-card-icon"><MapPin size={20} /></div>
                   <span className="contact-card-label">LOCATION</span>
                   <span className="contact-card-value">Jaipur, Rajasthan</span>
                 </a>
                 <a href="https://www.linkedin.com/in/vinod-kumar-agrawal-79321342/" target="_blank" rel="noopener noreferrer" className="contact-card contact-card-wide">
-                  <div className="contact-card-icon"><Linkedin size={20}/></div>
+                  <div className="contact-card-icon"><Linkedin size={20} /></div>
                   <span className="contact-card-label">LINKEDIN</span>
                   <span className="contact-card-value">Vinod Kumar Agrawal</span>
                 </a>
@@ -318,6 +320,16 @@ function App() {
         </div>
         <p className="disclaimer">VKA Capital Bridge is an advisory firm. We are not an insurance company or real estate developer/broker. We facilitate through IRDAI-approved partners and RERA-registered developers.</p>
       </footer>
+
+      <a
+        href="https://wa.me/919618211000"
+        className="floating-whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+      >
+        <img src={whatsappIcon} alt="WhatsApp" style={{ width: '38px', height: '38px', objectFit: 'contain' }} />
+      </a>
     </div>
   )
 }
